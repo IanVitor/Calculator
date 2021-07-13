@@ -11,4 +11,4 @@ Calculator made with Python and Tkinter.
 <br>
 -[x] Criar lógica
 <br>
--[] Implementar o ponto
+-[ ] Implementar o ponto
