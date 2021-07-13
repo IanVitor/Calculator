@@ -13,6 +13,8 @@ Calculadora simples, feita com Python e Tkinter.
 <br>
 -[ ] Implementar o ponto
 
+<br>
+
 <h1 align="center">
   <img  src="./source/animacao.gif" />
   </h1>
