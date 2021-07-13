@@ -1,5 +1,5 @@
 # U-Calculator
-Calculator made with Python and Tkinter.
+Calculadora simples, feita com Python e Tkinter.
 
 <br>
 
