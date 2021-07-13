@@ -14,5 +14,5 @@ Calculadora simples, feita com Python e Tkinter.
 -[ ] Implementar o ponto
 
 <h1 align="center">
-  <img alt="Readme" title="Readme" src="./github/Calculator/source/animacao.gif" />
+  <img alt="Readme" title="Readme" src="./IanVitor/Calculator/source/animacao.gif" />
   </h1>
