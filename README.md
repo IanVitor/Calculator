@@ -7,6 +7,8 @@ Calculator made with Python and Tkinter.
   Projeto em construção!!!
   </h1>
 
--[x] Criar interface
+-[x] Criar interface 
+<br>
 -[x] Criar lógica
+<br>
 -[] Implementar o ponto
