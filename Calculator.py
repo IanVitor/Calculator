@@ -1,111 +1,122 @@
 from tkinter import *
 
-root = Tk()
+interface_calculadora = Tk()
 
-#FUNCTIONS------>
-def click_equal():
-    second_number = windom.get()
-    windom.delete(0, END)
-    if math == "sum":
-        windom.insert(0, f_number + float(second_number))
-    if math == "subtration":
-        windom.insert(0, f_number - float(second_number))
-    if math == "division":
-        windom.insert(0, f_number / float(second_number))
-    if math == "multiplication":
-        windom.insert(0, f_number * float(second_number))
+#Funções executadas na calculadora#
+def click_igual():
+    segundo_numero = visor_calculadora.get()
+    visor_calculadora.delete(0, END)
+    if operacao == "soma":
+        visor_calculadora.insert(0, prim_numero + float(segundo_numero))
+    if operacao == "subtracao":
+        visor_calculadora.insert(0, prim_numero - float(segundo_numero))
+    if operacao == "divisao":
+        visor_calculadora.insert(0, prim_numero / float(segundo_numero))
+    if operacao == "multiplicacao":
+        visor_calculadora.insert(0, prim_numero * float(segundo_numero))
 
-def click_multiplication():
-    first_number = windom.get()
-    global f_number
-    global math
-    math = "multiplication"
-    f_number = float(first_number)
-    windom.delete(0, END)
+def click_multiplicacao():
+    primeiro_numero = visor_calculadora.get()
+    global prim_numero
+    global operacao
+    operacao = "multiplicacao"
+    prim_numero = float(primeiro_numero)
+    visor_calculadora.delete(0, END)
 
-def click_division():
-    first_number = windom.get()
-    global f_number
-    global math
-    math = "division"
-    f_number = float(first_number)
-    windom.delete(0, END)
+def click_divisao():
+    primeiro_numero = visor_calculadora.get()
+    global prim_numero
+    global operacao
+    operacao = "divisao"
+    prim_numero = float(primeiro_numero)
+    visor_calculadora.delete(0, END)
 
-def click_subtration():
-    first_number = windom.get()
-    global f_number
-    global math
-    math = "subtration"
-    f_number = float(first_number)
-    windom.delete(0, END)
+def click_subtracao():
+    primeiro_numero = visor_calculadora.get()
+    global prim_numero
+    global operacao
+    operacao = "subtracao"
+    prim_numero = float(primeiro_numero)
+    visor_calculadora.delete(0, END)
 
-def click_sum():
-    first_number = windom.get()
-    global f_number
-    global math
-    math = "sum"
-    f_number = float(first_number)
-    windom.delete(0, END)
+def click_soma():
+    primeiro_numero = visor_calculadora.get()
+    global prim_numero
+    global operacao
+    operacao = "soma"
+    prim_numero = float(primeiro_numero)
+    visor_calculadora.delete(0, END)
 
-def delete():
-    windom.delete(0, END)
+def click_ponto():
+    visor_calculadora.insert(END, ".")
 
-def click_button(number):
-    actual = windom.get()
-    windom.delete(0, END)
-    windom.insert(END, str(actual) + str(number))
+def limpar_visor():
+    visor_calculadora.delete(0, END)
 
-windom = Entry(root)
-windom.grid(row=0, column=0, columnspan=10, ipadx=16)
+def click_botao(number):
+    valor_atual = visor_calculadora.get()
+    visor_calculadora.delete(0, END)
+    visor_calculadora.insert(END, str(valor_atual) + str(number))
 
-#BUTTONS------->
-button_9 = Button(root, text="9", height=2, width=5, command=lambda: click_button(9))
-button_9.grid(row=1, column=0)
+#Tela onde é mostrado os valores inseridos e resultados#
+visor_calculadora = Entry(interface_calculadora, relief="sunken", fg="black", font= "Times 15 bold", width=32)
+visor_calculadora.grid(row=0, column=0, columnspan=5, ipady=8, ipadx=0)
 
-button_8 = Button(root, text="8", height=2, width=5, command=lambda: click_button(8))
-button_8.grid(row=1, column=1)
+#Botões usados na calculadora#
+botao_9 = Button(interface_calculadora, text="9", height=4, width=10, relief="groove", bg="darkgrey", command=lambda: click_botao(9))
+botao_9.grid(row=1, column=0)
 
-button_7 = Button(root, text="7", height=2, width=5, command=lambda: click_button(7))
-button_7.grid(row=1, column=2)
+botao_8 = Button(interface_calculadora, text="8", height=4, width=10, relief="groove", bg="darkgrey", command=lambda: click_botao(8))
+botao_8.grid(row=1, column=1)
 
-button_6 = Button(root, text="6", height=2, width=5, command=lambda: click_button(6))
-button_6.grid(row=2, column=0)
+botao_7 = Button(interface_calculadora, text="7", height=4, width=10, relief="groove", bg="darkgrey", command=lambda: click_botao(7))
+botao_7.grid(row=1, column=2)
 
-button_5 = Button(root, text="5", height=2, width=5, command=lambda: click_button(5))
-button_5.grid(row=2, column=1)
+botao_6 = Button(interface_calculadora, text="6", height=4, width=10, relief="groove", bg="darkgrey", command=lambda: click_botao(6))
+botao_6.grid(row=2, column=0)
 
-button_4 = Button(root, text="4", height=2, width=5, command=lambda: click_button(4))
-button_4.grid(row=2, column=2)
+botao_5 = Button(interface_calculadora, text="5", height=4, width=10, relief="groove", bg="darkgrey", command=lambda: click_botao(5))
+botao_5.grid(row=2, column=1)
 
-button_3 = Button(root, text="3", height=2, width=5, command=lambda: click_button(3))
-button_3.grid(row=3, column=0)
+botao_4 = Button(interface_calculadora, text="4", height=4, width=10, relief="groove", bg="darkgrey", command=lambda: click_botao(4))
+botao_4.grid(row=2, column=2)
 
-button_2 = Button(root, text="2", height=2, width=5, command=lambda: click_button(2))
-button_2.grid(row=3, column=1)
+botao_3 = Button(interface_calculadora, text="3", height=4, width=10, relief="groove", bg="darkgrey", command=lambda: click_botao(3))
+botao_3.grid(row=3, column=0)
 
-button_1 = Button(root, text="1", height=2, width=5, command=lambda: click_button(1))
-button_1.grid(row=3, column=2)
+botao_2 = Button(interface_calculadora, text="2", height=4, width=10, relief="groove", bg="darkgrey", command=lambda: click_botao(2))
+botao_2.grid(row=3, column=1)
 
-button_0 = Button(root, text="0", height=2, width=5, command=lambda: click_button(0))
-button_0.grid(row=4, column=0)
+botao_1 = Button(interface_calculadora, text="1", height=4, width=10, relief="groove", bg="darkgrey", command=lambda: click_botao(1))
+botao_1.grid(row=3, column=2)
 
-button_C = Button(root, text="C", height=2, width=5, command=delete)
-button_C.grid(row=4, column=1)
+botao_0 = Button(interface_calculadora, text="0", height=4, width=10, relief="groove", bg="darkgrey", command=lambda: click_botao(0))
+botao_0.grid(row=4, column=1)
 
-button_equal = Button(root, text="=", height=2, width=5, command=click_equal)
-button_equal.grid(row=4, column=2)
+botao_limpar = Button(interface_calculadora, text="C", height=4, width=10, bg="red", command=limpar_visor)
+botao_limpar.grid(row=4, column=0)
 
-button_sum = Button(root, text="+", height=2, width=5, command=click_sum)
-button_sum.grid(row=1, column=3)
+botao_igual = Button(interface_calculadora, text="=", height=4, width=45, bg="RoyalBlue1", command=click_igual)
+botao_igual.grid(row=5, column=0, columnspan=4)
 
-button_subtration = Button(root, text="-", height=2, width=5, command=click_subtration)
-button_subtration.grid(row=2, column=3)
+botao_soma = Button(interface_calculadora, text="+", height=4, width=10, bg="grey", command=click_soma)
+botao_soma.grid(row=1, column=3)
 
-button_multiplication = Button(root, text="x", height=2, width=5, command=click_multiplication)
-button_multiplication.grid(row=3, column=3)
+botao_subtracao = Button(interface_calculadora, text="-", height=4, width=10, bg="grey", command=click_subtracao)
+botao_subtracao.grid(row=2, column=3)
 
-button_division = Button(root, text="%", height=2, width=5, command=click_division)
-button_division.grid(row=4, column=3)
+botao_multiplicacao = Button(interface_calculadora, text="x", height=4, width=10, bg="grey", command=click_multiplicacao)
+botao_multiplicacao.grid(row=3, column=3)
 
-root.resizable(False, False)
-root.mainloop()
+botao_divisao = Button(interface_calculadora, text="/", height=4, width=10, bg="grey", command=click_divisao)
+botao_divisao.grid(row=4, column=3)
+
+botao_ponto = Button(interface_calculadora, text=".", height=4, width=10, bg="grey", command=click_ponto)
+botao_ponto.grid(row=4, column=2)
+
+#Propriedades da janela principal#
+interface_calculadora.iconbitmap(r"C:\Users\rbsnc\PycharmProjects\main\Source/pixil-frame-0.ico")
+interface_calculadora.title("Ian Calculator's")
+interface_calculadora.geometry("320x400")
+interface_calculadora.resizable(False, False)
+interface_calculadora.mainloop()
