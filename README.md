@@ -4,14 +4,8 @@ Calculadora simples, feita com Python e Tkinter.
 <br>
 
 <h1 align="center">
-  Projeto em construção!!!
+  Projeto feito por motivos de estudo, nada profissional.
   </h1>
-
--[x] Criar interface 
-<br>
--[x] Criar lógica
-<br>
--[ ] Implementar o ponto
 
 <br>
 
